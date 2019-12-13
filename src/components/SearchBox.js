@@ -11,7 +11,7 @@ class SearchBox extends React.Component {
   };
   onInputSubmit = event => {
     event.preventDefault();
-    console.log(this.state.inputText);
+    this.props.onSearchSubmit(this.state.inputText);
   };
 
   render() {
