@@ -7,13 +7,17 @@ class SearchBox extends React.Component {
 
   onInputChange = event => {
     this.setState({ inputText: event.target.value });
+    // console.log(this.state.inputText);
+  };
+  onInputSubmit = event => {
+    event.preventDefault();
     console.log(this.state.inputText);
   };
 
   render() {
     return (
       <div className="search-bar ui segment">
-        <form className="ui form">
+        <form className="ui form" onSubmit={this.onInputSubmit}>
           <div className="filed">
             <label>Video Search </label>
             <input
