@@ -3,7 +3,11 @@ import SearchBox from "./SearchBox";
 import Youtube from "../apis/Youtube";
 class App extends React.Component {
   onSearchSubmit = inputText => {
-    console.log(inputText);
+    Youtube.get("/search", {
+      params: {
+        q: inputText
+      }
+    });
   };
 
   render() {
