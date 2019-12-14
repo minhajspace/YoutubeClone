@@ -15,10 +15,11 @@ class App extends React.Component {
     console.log(response);
     this.setState({ video: response.data.items });
   };
-  onVideoSelect(video) {
-    console.log(video);
+  onVideoSelect = video => {
     this.setState({ selectVideo: video });
-  }
+    console.log(this.state.selectVideo);
+  };
+
   render() {
     return (
       <div className="ui container">
