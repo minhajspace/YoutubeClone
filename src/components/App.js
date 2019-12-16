@@ -7,6 +7,10 @@ import VideoDetails from "./VideoDetails";
 class App extends React.Component {
   state = { video: [], selectVideo: null };
 
+  componentDidMount() {
+    this.onSearchSubmit("buuldings ");
+  }
+
   onSearchSubmit = async inputText => {
     const response = await Youtube.get("/search", {
       params: {
@@ -14,7 +18,10 @@ class App extends React.Component {
       }
     });
     console.log(response);
-    this.setState({ video: response.data.items });
+    this.setState({
+      video: response.data.items,
+      selectVideo: response.data.items[0]
+    });
   };
   onVideoSelect = video => {
     this.setState({ selectVideo: video });
