@@ -8,7 +8,7 @@ class App extends React.Component {
   state = { video: [], selectVideo: null };
 
   componentDidMount() {
-    this.onSearchSubmit("buuldings ");
+    this.onSearchSubmit("NDTV");
   }
 
   onSearchSubmit = async inputText => {
